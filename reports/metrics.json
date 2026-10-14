@@ -1,0 +1,228 @@
+{
+  "ml": {
+    "trained_at": "2026-10-14T15:08:32",
+    "train_period_end": "2026-08-10 00:00:00",
+    "n_train": 129748,
+    "n_test": 69804,
+    "n_fraud_train_true": 781,
+    "n_fraud_train_known": 665,
+    "label_coverage_train": 0.8514724711907811,
+    "ml_threshold": 0.2,
+    "validation_start": "2026-07-31 00:00:00",
+    "validation_precision_known_labels": 0.5854,
+    "validation_precision_true": 0.5854,
+    "fraud_rate_train": 0.006019360606714554,
+    "fraud_rate_test": 0.004799151911065268,
+    "hgb_pr_auc": 0.8888702484596506,
+    "hgb_roc_auc": 0.996342253379205,
+    "iforest_pr_auc": 0.3500363390696223,
+    "iforest_roc_auc": 0.915998309564902,
+    "feature_importance": [
+      {
+        "feature": "agent_roundtrips_24h",
+        "importance": 0.1934
+      },
+      {
+        "feature": "hours_since_device_event",
+        "importance": 0.1218
+      },
+      {
+        "feature": "amount",
+        "importance": 0.0577
+      },
+      {
+        "feature": "history_n_type",
+        "importance": 0.0509
+      },
+      {
+        "feature": "inbound_amount_24h",
+        "importance": 0.0467
+      },
+      {
+        "feature": "share_of_balance",
+        "importance": 0.0431
+      },
+      {
+        "feature": "is_round_amount",
+        "importance": 0.0416
+      },
+      {
+        "feature": "receiver_age_days",
+        "importance": 0.0368
+      },
+      {
+        "feature": "n_tx_1h",
+        "importance": 0.0201
+      },
+      {
+        "feature": "receiver_n_senders_24h",
+        "importance": 0.0173
+      },
+      {
+        "feature": "n_credit_30min",
+        "importance": 0.0157
+      },
+      {
+        "feature": "is_new_counterparty",
+        "importance": 0.0136
+      },
+      {
+        "feature": "kyc_level",
+        "importance": 0.0096
+      },
+      {
+        "feature": "minutes_since_deposit",
+        "importance": 0.0093
+      },
+      {
+        "feature": "cashout_ratio",
+        "importance": 0.008
+      }
+    ]
+  },
+  "evaluation_test": {
+    "regles": {
+      "tp": 185,
+      "fp": 131,
+      "fn": 150,
+      "precision": 0.5854,
+      "recall": 0.5522,
+      "f1": 0.5684,
+      "alert_rate": 0.00453,
+      "fausses_alertes_par_jour": 6.5,
+      "alertes_par_jour": 15.8,
+      "pr_auc_score_regles": 0.5099
+    },
+    "ml": {
+      "tp": 269,
+      "fp": 42,
+      "fn": 66,
+      "precision": 0.865,
+      "recall": 0.803,
+      "f1": 0.8328,
+      "alert_rate": 0.00446,
+      "fausses_alertes_par_jour": 2.1,
+      "alertes_par_jour": 15.6
+    },
+    "combine": {
+      "tp": 296,
+      "fp": 167,
+      "fn": 39,
+      "precision": 0.6393,
+      "recall": 0.8836,
+      "f1": 0.7419,
+      "alert_rate": 0.00663,
+      "fausses_alertes_par_jour": 8.3,
+      "alertes_par_jour": 23.1,
+      "pr_auc_score_final": 0.8191
+    },
+    "par_scenario": [
+      {
+        "scenario": "AGENT_CYCLES",
+        "n": 78,
+        "rappel_regles": 0.3205,
+        "rappel_ml": 0.9487,
+        "rappel_combine": 0.9615
+      },
+      {
+        "scenario": "ARNAQUE_INGENIERIE_SOCIALE",
+        "n": 27,
+        "rappel_regles": 0.3333,
+        "rappel_ml": 0.1481,
+        "rappel_combine": 0.3704
+      },
+      {
+        "scenario": "FAUX_MARCHAND",
+        "n": 92,
+        "rappel_regles": 0.7609,
+        "rappel_ml": 0.9239,
+        "rappel_combine": 0.9348
+      },
+      {
+        "scenario": "MULE_RETRAIT",
+        "n": 31,
+        "rappel_regles": 0.129,
+        "rappel_ml": 0.7097,
+        "rappel_combine": 0.7097
+      },
+      {
+        "scenario": "PRISE_CONTROLE_COMPTE",
+        "n": 25,
+        "rappel_regles": 0.76,
+        "rappel_ml": 0.96,
+        "rappel_combine": 1.0
+      },
+      {
+        "scenario": "RAFALE_CREDIT",
+        "n": 82,
+        "rappel_regles": 0.7073,
+        "rappel_ml": 0.7317,
+        "rappel_combine": 0.9512
+      }
+    ],
+    "cas": {
+      "n": 28,
+      "detectes": 28,
+      "taux_detection": 1.0,
+      "operations_avant_alerte_mediane": 0.0,
+      "prejudice_total": 5968495,
+      "prejudice_alerte": 4703195,
+      "prejudice_bloque": 1250445
+    },
+    "cas_par_scenario": [
+      {
+        "scenario": "AGENT_CYCLES",
+        "cas": 2,
+        "detectes": 2,
+        "prejudice": 7960,
+        "prejudice_alerte": 7680,
+        "prejudice_bloque": 0
+      },
+      {
+        "scenario": "ARNAQUE_INGENIERIE_SOCIALE",
+        "cas": 5,
+        "detectes": 5,
+        "prejudice": 1552370,
+        "prejudice_alerte": 641350,
+        "prejudice_bloque": 0
+      },
+      {
+        "scenario": "FAUX_MARCHAND",
+        "cas": 3,
+        "detectes": 3,
+        "prejudice": 3648000,
+        "prejudice_alerte": 3307000,
+        "prejudice_bloque": 839000
+      },
+      {
+        "scenario": "PRISE_CONTROLE_COMPTE",
+        "cas": 12,
+        "detectes": 12,
+        "prejudice": 543165,
+        "prejudice_alerte": 543165,
+        "prejudice_bloque": 297445
+      },
+      {
+        "scenario": "RAFALE_CREDIT",
+        "cas": 6,
+        "detectes": 6,
+        "prejudice": 217000,
+        "prejudice_alerte": 204000,
+        "prejudice_bloque": 114000
+      }
+    ],
+    "fausses_alertes_par_type": {
+      "TRANSFERT": 93,
+      "RETRAIT": 38,
+      "DEPOT": 17,
+      "CREDIT": 12,
+      "VIREMENT_BANCAIRE": 6,
+      "PAIEMENT_MARCHAND": 1
+    },
+    "decisions": {
+      "ACCEPTER": 69341,
+      "REVUE": 394,
+      "BLOQUER": 69
+    }
+  }
+}

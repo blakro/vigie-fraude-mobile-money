@@ -1,0 +1,10 @@
+[project]
+name = "vigie-fraude-mobile-money"
+version = "2.0.0"
+description = "Vigie : détection de fraude mobile money sur des données synthétiques (opérateur fictif Doxal Money, Sénégal)"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning", "ignore:Using `httpx` with `starlette.testclient`"]

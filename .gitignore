@@ -1,0 +1,17 @@
+# Données et modèles régénérés par `python run_pipeline.py`
+data/*.parquet
+models/*.joblib
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.env
+
+# Éditeurs / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
